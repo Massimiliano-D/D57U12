@@ -3,24 +3,24 @@ package org.example;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-       public class JpaUtil {
+public class JpaUtil {
 
-        private static final EntityManagerFactory entityManagerFactory;
+    private static final EntityManagerFactory entityManagerFactory;
 
-        static {
-            try {
-                entityManagerFactory = Persistence
-                        .createEntityManagerFactory("D56U12");
-            } catch (Throwable ex) {
-                System.err.println("Initial EntityManagerFactory creation failed."
-                        + ex);
-                throw new ExceptionInInitializerError(ex);
-            }
+    static {
+        try {
+            entityManagerFactory = Persistence
+                    .createEntityManagerFactory("gestioneventi");
+        } catch (Throwable ex) {
+            System.err.println("Initial EntityManagerFactory creation failed."
+                    + ex);
+            throw new ExceptionInInitializerError(ex);
         }
-
-        public static EntityManagerFactory getEntityManagerFactory() {
-            return entityManagerFactory;
-        }
-
     }
+
+    public static EntityManagerFactory getEntityManagerFactory() {
+        return entityManagerFactory;
+    }
+
+}
 
